@@ -1,0 +1,153 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c100000;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 \expnd0\expndtw0\kerning0
+Overview 
+\f1\b0\fs24 \cb1 \
+
+\f0\b\fs26\fsmilli13333 \cb3 Week 3 Assignment \'ad Text Processing 
+\f1\b0\fs24 \cb1 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\f0\fs26\fsmilli13333 \cf2 \cb3 This week\'92s assignment will be similar to last weeks assignment, in that you will be processing a log file that records visits, or \'91hits\'92, a fictitious website has received in a day. This file will be in CSV format, so you can use the csv module taught this week to extract data from it. Your job will be to: 
+\f1\fs24 \cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl300\sa266\partightenfactor0
+\ls1\ilvl0
+\f0\fs26\fsmilli13333 \cf2 \cb3 \kerning1\expnd0\expndtw0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+Open the file and process it\'92s contents in memory for later processing \cb1 \uc0\u8232 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 {\listtext	2.	}\expnd0\expndtw0\kerning0
+Search for all hits that are images (using a regular expression) and gather some stats on those \cb1 \uc0\u8232 \cb3 images \cb1 \uc0\u8232 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 {\listtext	3.	}\expnd0\expndtw0\kerning0
+Find out which is the most popular browser people use to go to this website \cb1 \uc0\u8232 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+\cf2 \cb3 Unlike previous homeworks, this will not be outlined for you step by step. This means you can organize your program any which way you want, as long as you submit a Python program that meets all the requirements. Make sure to create a github repository for this assignment named 
+\b I
+\f1\b0  
+\f0\b S211_Assignment3
+\b0 .
+\f1  
+\f0 All development should be done in this repository. 
+\f1\fs24 \cb1 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 Useful Reminders 
+\f1\b0\fs24 \cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl300\sa266\partightenfactor0
+\ls2\ilvl0
+\f0\fs26\fsmilli13333 \cf2 \cb3 \kerning1\expnd0\expndtw0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+Read the assignment over a few times. At least twice. It always helps to have a clear picture of the overall assignment when understanding how to build a solution. \cb1 \uc0\u8232 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 {\listtext	2.	}\expnd0\expndtw0\kerning0
+Think about the problem for a while, and even try writing or drawing a solution using pencil and paper or a whiteboard. \cb1 \uc0\u8232 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 {\listtext	3.	}\expnd0\expndtw0\kerning0
+Before submitting the assignment, review the \'93Functional Requirements\'94 section and make sure you hit all the points. This will not guarantee a perfect score, however. \cb1 \uc0\u8232 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\b \cf2 \cb3 Part I \'ad Pull Down Web Log File 
+\f1\b0\fs24 \cb1 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\f0\fs26\fsmilli13333 \cf2 \cb3 Your program should download the web log file from the location provided by a 
+\i \'ad
+\f1\i0  
+\f0\i \'adurl
+\f1\i0  
+\f0 parameter. This is just like the previous assignment (remember to use agrparse). The URL you can use for testing is located here: 
+\b TODO
+\b0 .
+\f1  
+\fs24 \cb1 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 Part II \'ad Process File Using CSV 
+\f1\b0\fs24 \cb1 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\f0\fs26\fsmilli13333 \cf2 \cb3 The file should then be processed, using the CSV module from this week. Here is an example line from the file, with an explanation as to what each fields represents: 
+\f1\fs24 \cb1 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\f0\i\fs26\fsmilli13333 \cf2 \cb3 /images/test.jpg, 01/27/2014 03:26:04, Mozilla/5.0 (Linux) Firefox/34.0, 200, 346547 
+\f1\i0\fs24 \cb1 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\f0\fs26\fsmilli13333 \cf2 \cb3 When broken down by column, separated by commas, we have: 
+\f1\fs24 \cb1 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\f0\i\fs26\fsmilli13333 \cf2 \cb3 path to file, datetime accessed, browser, status of request, request size in bytes 
+\f1\i0\fs24 \cb1 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\f0\fs26\fsmilli13333 \cf2 \cb3 Some of this information you will use, some of it you will not. So, in our example, this line indicates that some user requested the file
+\f1  
+\f0\i /images/test.jpg
+\f1\i0  
+\f0 on 
+\i 0
+\f1\i0  
+\f0\i 1/27/2014 03:26:04
+\f1\i0  
+\f0 using a 
+\i F
+\f1\i0  
+\f0\i irefox
+\f1\i0  
+\f0 browser. The status of the request was 
+\i 2
+\f1\i0  
+\f0\i 00
+\f1\i0  
+\f0 (more on this later), and the file was 
+\i 3
+\f1\i0  
+\f0\i 46547
+\f1\i0  
+\f0 bytes. 
+\f1\fs24 \cb1 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 Food For Thought:
+\f1\b0  
+\f0 As you read and process the file line by line, how exactly do you plan on storing this data? In what way would storing the data make your life easier? Make sure to read through the whole assignment a few times before coming to any conclusions. 
+\f1\fs24 \cb1 \
+
+\f0\b\fs26\fsmilli13333 \cb3 Part III \'ad Search for Image Hits 
+\f1\b0\fs24 \cb1 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\f0\fs26\fsmilli13333 \cf2 \cb3 After processing the file, your next task will be to search for all hits that are for an image file. To check if a hit is for an image file or not, we will simply check that the file extension is either .jpg, .gif or .png. Remember to use regular expressions for this. Once you have found all the hits relating to images, print out how many hits, percentage\'adwise, are for images. As an example, your program should print to the screen something like \'93Image requests account for 45.3% of all requests\'94 
+\f1\fs24 \cb1 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 Part IV \'ad Finding Most Popular Browser 
+\f1\b0\fs24 \cb1 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\f0\fs26\fsmilli13333 \cf2 \cb3 Once Part III is done, your program should find out which browser people are using is the most popular. The third column of the file stores what is known as the User\'adAgent, which is a string web browser\'92s use to identify themselves. The program should use a regular expression to determine what kind of browser created each hit, and print out which browser is the most popular that day. For this exercise, all you need to do is determine if the browser is Firefox, Chrome, Internet Explorer or Safari. 
+\f1\fs24 \cb1 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 Part VI \'ad Extra Credit 
+\f1\b0\fs24 \cb1 \
+\pard\pardeftab720\sl300\sa240\partightenfactor0
+
+\f0\fs26\fsmilli13333 \cf2 \cb3 For extra credit, your program should output a list of hours of the day sorted by the total number of hits that occurred in that hour. The datetime is given by the second column, which you can extract the hour from using the Datetime module from last week. Using that information, your program should print to the screen something like: 
+\f1\fs24 \cb1 \
+
+\f0\fs26\fsmilli13333 \cb3 \'93Hour 12 has 1023 hits\'94 \'93Hour 13 has 983 hits\'94 \'93Hour 11 has 845 hits\'94 ... 
+\f1\fs24 \cb1 \
+
+\f0\fs26\fsmilli13333 \cb3 \'93Hour 03 has 3 hits\'94 \'93Hour 04 has 0 hits\'94 
+\f1\fs24 \cb1 \
+
+\f0\fs26\fsmilli13333 \cb3 for all 24 hours of the day. 
+\f1\fs24 \cb1 \
+}

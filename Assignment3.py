@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Create a program that returns a birthday or logs an error."""
+"""Create a program that searches a file and returns popular browser."""
 
 import argparse
 import csv
@@ -58,7 +58,7 @@ def search(userdata):
 
        """
 
-    return [info for info in userdata if re.search('\.(gif|jpg|png)$', info) is not None]
+    return [info for info in userdata if re.search('\.(gif|jpg|png)$', info['path']) is not None]
 
 
 # find the most popular browser
@@ -81,24 +81,17 @@ def browser(userdata):
 
     # loop on userdata
 
-    for line in userdata['browser']:
+    for line in userdata:
         for key, value in counts.iteritems():
             regex = value['regex']
-            if re.search(regex, line):
+            if re.search(regex, line['browser']):
                 value['count'] += 1
-
-
-
-    # extra credit, print out hours and number of hits for all 24 hours in a day
-
-
-def print_hits():
-    raise Exception('Not implemented at this time')
+    return counts
 
 
 if __name__ == '__main__':
-    # 'http://s3.amazonaws.com/cuny-is211-spring2015/weblog.csv'
-    # setting up argparse
+    #'http://s3.amazonaws.com/cuny-is211-spring2015/weblog.csv'
+    #setting up argparse
     parser = argparse.ArgumentParser(description='weblog')
     parser.add_argument('--url', help='URL that represents browser user data', required=True)
     args = vars(parser.parse_args())
@@ -108,8 +101,15 @@ if __name__ == '__main__':
     userdata = process(data)
 
     hits = search(userdata)
-    print('Image requests account for {}% of all requests', len(hits) / float(len(userdata)))
+    print('Image requests account for {}% of all requests'.format(len(hits) / float(len(userdata)) * 100))
 
-    browser(userdata)
+    browser_hits = browser(userdata)
 
-    print_hits()
+    best_browser = ''
+    highest = 0
+    for browser in browser_hits:
+        if browser_hits.get(browser)['count'] > highest:
+            highest = browser_hits.get(browser)['count']
+            best_browser = browser
+
+    print('The most popular browser is {}, with {} hits'.format(best_browser, highest))
